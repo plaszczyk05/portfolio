@@ -1,0 +1,1493 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .skills,
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skillsList {
+    padding-left: 20px;
+  }
+}
+
+.template {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+    position: relative;
+    justify-content: space-between;
+}
+
+.title {
+    height: 100px;
+    width: 700px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name {
+    color: white;
+    font-size: 60px;
+    top: 20px;
+    pointer-events: none;
+}
+
+.subtitle {
+    color: white;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.subtitle-experience {
+    color: white;
+    font-size: 14px;
+    pointer-events: none;
+    transform: translateY(8px);
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 360px;
+    background: url(photo.png);
+    background-size: cover;
+    filter: brightness(1.1) contrast(1.1) saturate(1.05);
+    border: 10px solid white;
+    margin: 20px;
+}
+
+.mainContent {
+    display: flex;
+    gap: 150px;
+    margin-top: 40px;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.contactBlock {
+    height: 100%;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: black;
+    transform: translateX(60px);
+}
+
+.subcontactBlock {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.block1 {
+    height: 50px;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-circle-user {
+    color: white;
+    font-size: 28px;
+}
+
+.icon-mail-alt {
+    font-size: 30px;
+    color: white;
+}
+
+.contact {
+    color: white;
+    font-size: 30px;
+    pointer-events: none;
+}
+
+[class^="contactText"] {
+    color: white;
+    font-size: 17px;
+    pointer-events: none;
+}
+
+.block2 {
+    height: 500px;
+    width: 300px;
+    background-color: black;
+    gap: 5px;
+    font-size: 20px;
+    color: white;
+    gap: 20px;
+}
+
+.content {
+    height: 500px;
+    width: 700px;
+    display: grid;
+    grid-template-areas: "c1 c2"
+    "c3 c4";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    background-color: black;
+}
+
+[class^="acontent"] {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid white;
+    flex-direction: column;
+}
+
+.contactText1, .contactText2, .contactText3, .contactText4 {
+    transform: translateY(-8px);
+}
+
+.contactText1::before {
+    content: "\f0e0";
+    font-family: "mail";
+    margin-right: 7px;
+    pointer-events: none;
+}
+
+.contactText2::before {
+    content: "\e802";
+    font-family: "mail";
+    font-size: 15px;
+    margin-right: 5px;
+    pointer-events: none;
+}
+
+.contactText3::before {
+    content: "\e803";
+    font-family: "mail";
+    margin-right: 7px;
+    font-size: 15px;
+    vertical-align: top;
+    pointer-events: none;
+}
+
+.contactText4::before {
+    content: "\e801";
+    font-family: "mail";
+    margin-right: 6px;
+    font-size: 17px;
+    vertical-align: top;
+    pointer-events: none;
+}
+
+.taleIcon {
+    font-size: 100px;
+    color: white;
+}
+
+.taleText {
+    color: white;
+    pointer-events: none;
+    font-size: 18px;
+}
+
+[class^="acontent"]  {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.taleIcon {
+  transition: transform 0.2s ease;
+}
+
+[class^="acontent"]:hover {
+  background-color: #222;
+  box-shadow: 0 0 10px #00ffff44;
+  border: 2px solid #00bfff;
+}
+
+[class^="acontent"]:hover .taleIcon {
+    transform: scale(1.1);
+    color: #00bfff;
+}
+
+[class^="acontent"]:hover .taleText {
+    color: #00bfff;
+}
+
+
+
+.about-me, .education, .skills, .projects {
+    display: none;
+    color: white;
+    position: absolute;
+    background-color: black;
+    height: 500px;
+    width: 700px;
+    border: 2px solid white;
+    border-radius: 5px;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.aboutTitle {
+    text-align: center;
+    padding: 25px;
+    pointer-events: none;
+}
+
+.aboutText {
+    line-height: 1.4;
+    font-size: 18px;
+    padding: 0px 25px 0px 25px;
+    pointer-events: none;
+}
+
+.section-content {
+    display: flex;
+    gap: 10px;
+}
+
+.visible {
+    display: block;
+    pointer-events: auto;
+}
+
+.education.visible {
+    display: flex;
+}
+
+
+.wsb {
+    height: 280px;
+    border-radius: 0px 0px 20px 0px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.wsbText {
+    height: 270px;
+    width: 255px;
+    font-size: 17px;
+    padding: 25px;
+    line-height: 1.2;
+}
+
+.wsbSubtext {
+    position: absolute;
+    bottom: 0px;
+    height: 200px;
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.skillsTitle {
+    text-align: center;
+    padding: 25px;
+}
+
+.skillsText {
+    line-height: 1.2;
+    padding: 0px 25px 0px 50px;
+    text-align: center;
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 90%;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.certTitle {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.langTitle {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.cwLink {
+    all: unset;
+    cursor: pointer;
+    color: #00bfff;
+    pointer-events: all;
+}
+
+.projects {
+    overflow: hidden;
+}
+
+.projectsContent {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.projectsTitle {
+    text-align: center;
+    padding: 25px;
+    border-bottom: 2px solid white;
+    top: 0px;
+}
+
+.projectsSection {
+  color: white;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 25px 25px 0px 25px;
+  background-color: black;
+}
+
+.projectsSection::-webkit-scrollbar {
+  display: none;
+}
+
+
+.terminalProjectSection {
+    background-color: black;
+    width: 650px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.terminalProjectTitle {
+    pointer-events: none;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.terminalProjectVideo {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #000;
+}
+
+.terminalComparison {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    width: 500px;
+    max-width: 100%;
+    margin-top: 12px;
+    padding-bottom: 20px;
+}
+
+.terminalComparisonItem {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.terminalComparisonCaption {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.terminalComparisonImage {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.terminalProjectText {
+    width: 500px;
+    max-width: 100%;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+.screensaverProjectSection {
+    background-color: black;
+    width: 650px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.screensaverProjectTitle {
+    pointer-events: none;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.screensaverProjectVideo {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: black;
+}
+
+.screensaverComparison {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    width: 500px;
+    max-width: 100%;
+    padding-top: 20px;
+    margin-top: 12px;
+}
+
+.screensaverComparisonItem {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.screensaverComparisonCaption {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.screensaverComparisonImage {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.screensaverProjectText {
+    width: 500px;
+    max-width: 100%;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+.cupidProjectSection {
+    background-color: black;
+    width: 650px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.cupidProjectTitle {
+    pointer-events: none;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cupidProjectVideo {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: black;
+}
+
+.cupidProjectText {
+    width: 500px;
+    max-width: 100%;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+.windows {
+    background-color: black;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.windowsTitle {
+    pointer-events: none;
+    margin-bottom: 15px;
+}
+
+.windowsProject {
+    width: 500px;
+}
+
+.windowsText, .windowsTech {
+    width: 500px;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+.windowsTech {
+    padding-left: 20px;
+}
+
+.windowsTechTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 12px;
+    pointer-events: none;
+}
+
+.netlify {
+    filter: brightness(0) invert(1);
+    height: 30px;
+    margin-right: 3px;
+}
+
+.github {
+    filter: brightness(0) invert(1);
+    height: 30px;
+    margin-left: 3px;
+}
+
+.netlify:hover {
+    filter: brightness(100) invert(0);
+    height: 30px;
+    margin-right: 3px;
+}
+
+.github:hover {
+    filter: brightness(100) invert(0);
+    height: 30px;
+    margin-left: 3px;
+}
+
+.sliderTitle {
+    margin-bottom: 15px;
+    pointer-events: none;
+}
+
+.slider {
+    background-color: black;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.sliderProject {
+    width: 500px;
+}
+
+.sliderText {
+    width: 500px;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+
+.englishProjectSection {
+    background-color: black;
+    width: 650px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.englishProjectTitle {
+    margin-bottom: 15px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.englishProjectContent {
+    width: 500px;
+    max-width: 100%;
+    background-color: black;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.englishProjectImage {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    align-self: flex-start;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.englishProjectText {
+    padding: 0 25px;
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.calculatorTitle {
+    margin-bottom: 15px;
+    pointer-events: none;
+}
+
+.calculator {
+    background-color: black;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.calculatorProject {
+    width: 180px;
+}
+
+.calculatorContent {
+    width: 500px;
+    background-color: black;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.calculatorText {
+    pointer-events: none;
+    line-height: 1.2;
+    padding: 0 25px 0 25px;
+}
+
+.weatherTitle {
+    margin-bottom: 15px;
+    pointer-events: none;
+}
+
+.weather {
+    background-color: black;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.weatherProject {
+    width: 180px;
+}
+
+.weatherContent {
+    width: 500px;
+    background-color: black;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.weatherText {
+    pointer-events: none;
+    line-height: 1.2;
+    padding: 0 25px 0 25px;
+}
+
+.skills-subText {
+    font-size: 20px;
+    margin: 20px 0px 20px 0px;
+    pointer-events: none;
+}
+
+li {
+    margin-bottom: 3px;
+}
+
+
+#section-about3,
+#section-about4 {
+    overflow: hidden;
+}
+
+#section-about3.visible {
+    display: flex;
+    flex-direction: column;
+}
+
+#section-about3 > .aboutTitle {
+    flex-shrink: 0;
+}
+
+#section-about3 > .skillsText {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: calc(100% - 6px);
+    max-width: none;
+    margin: 0 6px 30px 0;
+    padding: 0 25px 0px 50px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    pointer-events: auto;
+}
+
+#section-about4 .projectsContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 0;
+}
+
+#section-about4 .projectsContent > .aboutTitle {
+    flex-shrink: 0;
+}
+
+#section-about4 .projectsSection {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: 6px;
+    margin-bottom: 30px;
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+}
+
+#section-about3 .skillsText::-webkit-scrollbar,
+#section-about4 .projectsSection::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+}
+
+#section-about3 .skillsText::-webkit-scrollbar-track,
+#section-about4 .projectsSection::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+#section-about3 .skillsText::-webkit-scrollbar-thumb,
+#section-about4 .projectsSection::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 10px;
+}
+
+#section-about3 .skillsText::-webkit-scrollbar-thumb:hover,
+#section-about4 .projectsSection::-webkit-scrollbar-thumb:hover {
+    background: #d9d9d9;
+}
+
+@supports (-moz-appearance: none) {
+    #section-about3 > .skillsText,
+    #section-about4 .projectsSection {
+        scrollbar-width: thin;
+        scrollbar-color: #fff transparent;
+    }
+}
+
+li {
+    pointer-events: none;
+}
+
+
+.retailExperience {
+    background-color: black;
+    color: white;
+    width: 650px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.retailTitle {
+    width: 500px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 25px;
+    pointer-events: none;
+}
+
+.retailHeader {
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.retailHeader .retailTitle {
+    width: auto;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.retailLogoLink {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.retailLogo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: opacity;
+}
+
+.retailLogoHover {
+    position: absolute;
+    opacity: 0;
+}
+
+.retailLogoLink:hover .retailLogoDefault {
+    opacity: 0;
+}
+
+.retailLogoLink:hover .retailLogoHover {
+    opacity: 1;
+}
+
+.retailPosition {
+    width: 500px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.retailPeriod {
+    width: 500px;
+    font-size: 14px;
+    color: white;
+    text-align: left;
+    transform: translateY(-15px);
+}
+
+.retailDescription {
+    width: 500px;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.retailSubTitle {
+    width: 500px;
+    max-width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.retailList {
+    width: 500px;
+    max-width: 100%;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.retailList li {
+    margin-bottom: 6px;
+}
+
+.retailTechnologies {
+    width: 500px;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.icon-briefcase-1 {
+    display: inline-block;
+    font-size: 15px;
+    transform: translateY(0px) !important;
+}
+
+.pe-none {
+    pointer-events: none;
+}
+
+.border-radius-5 {
+    border-radius: 7px;
+}
+
+      img.border-radius-5,
+      video.border-radius-5 {
+        border-radius: 7px !important;
+      }
+      .terminalComparison video,
+      .screensaverComparison video {
+        display: block;
+        max-width: 100%;
+      }
+
+      .screensaverComparison {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+        align-items: start !important;
+        width: 100% !important;
+        max-width: 500px !important;
+        margin: 0 auto 24px !important;
+        box-sizing: border-box;
+      }
+      .screensaverComparison .screensaverComparisonItem {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
+      }
+      .screensaverComparison .screensaverComparisonCaption {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+      }
+      .screensaverComparison .screensaverComparisonMedia {
+        width: 100% !important;
+        max-width: 190px !important;
+        aspect-ratio: 9 / 16;
+        border-radius: 5px !important;
+        overflow: hidden !important;
+        isolation: isolate;
+        background: #111;
+        box-sizing: border-box;
+      }
+      .screensaverComparison .screensaverComparisonMedia video,
+      .screensaverComparison .screensaverComparisonMedia img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        object-fit: cover !important;
+        border-radius: 5px !important;
+        clip-path: inset(0 round 5px);
+      }
+      @media (max-width: 380px) {
+        .screensaverComparison { gap: 8px !important; }
+        .screensaverComparison .screensaverComparisonCaption { font-size: 12px; }
+      }
+
+
+.terminalComparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 56px;
+    align-items: start;
+    justify-content: initial;
+    width: 500px;
+    max-width: 100%;
+}
+
+.terminalComparison .terminalComparisonItem {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.terminalComparison .terminalComparisonMedia {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    overflow: hidden;
+    border-radius: 5px !important;
+    isolation: isolate;
+    background: #000;
+    box-sizing: border-box;
+}
+
+.terminalComparison .terminalComparisonMedia > img,
+.terminalComparison .terminalComparisonMedia > video {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-width: 100%;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    border-radius: 5px !important;
+}
+
+@media (max-width: 540px) {
+    .terminalComparison {
+        column-gap: clamp(10px, 5vw, 56px);
+    }
+}
+
+
+@media (max-width: 768px) {
+    html,
+    body {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        min-height: 100%;
+        overflow-x: hidden;
+    }
+
+    .template {
+        width: 100%;
+        max-width: 620px;
+        min-width: 0;
+        min-height: 100dvh;
+        margin: 0 auto;
+        padding: 22px 16px 32px;
+    }
+
+    .header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .photo {
+        width: clamp(116px, 32vw, 150px);
+        height: clamp(116px, 32vw, 150px);
+        flex: 0 0 auto;
+        margin: 0;
+        border-width: 5px;
+        background-position: center;
+    }
+
+    .title {
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        text-align: center;
+        gap: 4px;
+    }
+
+    .name {
+        font-size: clamp(23px, 6.5vw, 40px);
+        letter-spacing: -0.8px;
+        line-height: 1.12;
+        white-space: nowrap;
+    }
+
+    .subtitle {
+        font-size: clamp(15px, 4.5vw, 20px);
+    }
+
+    .subtitle-experience {
+        font-size: clamp(11px, 3.2vw, 14px);
+        line-height: 1.4;
+        transform: none;
+    }
+
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 24px;
+        gap: 32px;
+    }
+
+    .content {
+        order: 1;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        height: clamp(420px, 58dvh, 520px);
+        min-width: 0;
+        gap: 10px;
+    }
+
+    [class^="acontent"] {
+        min-width: 0;
+        min-height: 0;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px 6px;
+    }
+
+    .taleIcon {
+        font-size: clamp(54px, 15vw, 90px);
+    }
+
+    .taleText {
+        font-size: clamp(12px, 3.6vw, 17px);
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    .contactBlock {
+        order: 2;
+        width: 100%;
+        height: auto;
+        gap: 12px;
+        transform: none;
+        padding: 0 6px;
+    }
+
+    .block1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .contact {
+        font-size: 25px;
+    }
+
+    .subcontactBlock {
+        gap: 16px;
+    }
+
+    [class^="contactText"] {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .about-me,
+    .education,
+    .skills,
+    .projects {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 3;
+    }
+
+    .aboutTitle {
+        font-size: 22px;
+        padding: 16px 12px;
+    }
+
+    .aboutText {
+        width: 100%;
+        max-height: calc(100% - 65px);
+        padding: 0 18px 18px;
+        overflow-y: auto;
+        font-size: 15px;
+        line-height: 1.5;
+        pointer-events: auto;
+    }
+
+    .education.visible {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .wsb {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: 135px;
+        flex-shrink: 0;
+        border: 0;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+
+    .wsbText {
+        width: 100%;
+        height: auto;
+        padding: 16px 18px 0;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .wsbSubtext {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 15px 18px 18px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    #section-about3 > .skillsText {
+        width: 100%;
+        max-width: none;
+        margin: 0 0 12px;
+        padding: 0 16px 18px 24px;
+        font-size: 14px;
+    }
+
+    .skills-subText {
+        font-size: 16px;
+        line-height: 1.3;
+        margin: 18px 0 10px;
+    }
+
+    #section-about4 .projectsContent {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+    }
+
+    #section-about4 .projectsSection {
+        width: 100%;
+        min-width: 0;
+        padding: 8px 12px 20px;
+        margin: 0 0 12px;
+        overflow-x: hidden;
+    }
+
+    .retailExperience,
+    .terminalProjectSection,
+    .screensaverProjectSection,
+    .cupidProjectSection,
+    .windows,
+    .slider,
+    .calculator,
+    .weather,
+    .englishProjectSection {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 32px;
+    }
+
+    .retailHeader {
+        width: 100%;
+        max-width: 100%;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .retailHeader .retailTitle {
+        width: auto;
+        max-width: 100%;
+        white-space: normal;
+        font-size: 17px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .retailPeriod {
+        width: 100%;
+        transform: none;
+    }
+
+    .retailDescription,
+    .retailSubTitle,
+    .retailList,
+    .retailTechnologies,
+    .terminalProjectText,
+    .screensaverProjectText,
+    .cupidProjectText,
+    .windowsText,
+    .sliderText,
+    .calculatorText,
+    .weatherText,
+    .windowsTech {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        font-size: 14px;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+    }
+
+    .retailSubTitle,
+    .windowsTechTitle {
+        font-size: 16px;
+    }
+
+    .terminalProjectTitle,
+    .screensaverProjectTitle,
+    .cupidProjectTitle,
+    .windowsTitle,
+    .sliderTitle,
+    .calculatorTitle,
+    .weatherTitle,
+    .englishProjectTitle {
+        font-size: 17px;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .terminalProjectVideo,
+    .screensaverProjectVideo,
+    .cupidProjectVideo,
+    .windowsProject,
+    .sliderProject {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .terminalComparison {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 12px;
+    }
+
+    .terminalComparisonCaption,
+    .screensaverComparisonCaption {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    .terminalComparison .terminalComparisonMedia {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .terminalComparison .terminalComparisonMedia > img,
+    .terminalComparison .terminalComparisonMedia > video {
+        width: 100%;
+        height: auto !important;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .screensaverComparison {
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 10px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .screensaverComparison .screensaverComparisonMedia {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .screensaverComparison .screensaverComparisonMedia video,
+    .screensaverComparison .screensaverComparisonMedia img {
+        object-fit: contain !important;
+    }
+
+    .calculatorContent,
+    .weatherContent,
+    .englishProjectContent {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .calculatorProject,
+    .weatherProject,
+    .englishProjectImage {
+        width: min(170px, 100%);
+        height: auto;
+    }
+
+    .calculatorText,
+    .weatherText,
+    .englishProjectText {
+        padding: 0;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .template {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .content {
+        gap: 8px;
+    }
+
+    .terminalComparison {
+        column-gap: 8px;
+    }
+
+    .terminalComparisonCaption,
+    .screensaverComparisonCaption {
+        font-size: 10px;
+    }
+}
